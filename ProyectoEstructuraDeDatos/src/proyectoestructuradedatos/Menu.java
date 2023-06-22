@@ -4,6 +4,7 @@ package proyectoestructuradedatos;
 import javax.swing.JOptionPane;
 
 public class Menu {
+    Rutina r=new Rutina();
     private static String[] usuarios = {"admin1", "admin2", "admin3"};
     private static String[] contrasenas = {"contra1", "contra2", "contra3"};
     
@@ -26,22 +27,21 @@ public class Menu {
         int opcion= 0;
         while(opcion !=4){
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null,"Menu Principal\n"
-                +"1. Opciones de Administrador\n"
-                +"2. Segunda Opcion\n"
-                +"3. Tercera Opcion\n"
+                +"1. Agregar Matricula\n"
+                +"2. Eliminar Matricula\n"
+                +"3. Ver Matriculas\n"
                 +"4. Salir"));
             switch(opcion){
                 case 1:
-                    JOptionPane.showMessageDialog(null,"Opcion en proceso!");
+                    r.agregarMatricula();
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Opcion en proceso!");
+                    r.eliminarMatricula();
                     break;
                 case 3:
-                    JOptionPane.showMessageDialog(null, "Opcion en proceso!");
+                    r.mostrarMatricula();
                     break;
                 case 4:
-                    JOptionPane.showMessageDialog(null, "Opcion en proceso!");
                     break;
                 default:
                     JOptionPane.showMessageDialog(null,"Opcion invalida!");
