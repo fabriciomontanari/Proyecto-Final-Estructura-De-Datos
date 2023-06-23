@@ -4,12 +4,14 @@ package proyectoestructuradedatos;
 public class Matricula {
     private String nombre;
     private String apellidos;
+    private String cedula;
     private String curso;
     private String horario;
     
     public Matricula(){
         this.nombre="";
         this.apellidos="";
+        this.cedula="";
         this.curso="";
         this.horario="";
     }
@@ -44,6 +46,14 @@ public class Matricula {
 
     public void setHorario(String horario) {
         this.horario = horario;
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
     
 }

@@ -22,6 +22,7 @@ public class Rutina {
         Matricula m = new Matricula();
         m.setNombre(JOptionPane.showInputDialog(null,"Digite el nombre del estudiante:"));
         m.setApellidos(JOptionPane.showInputDialog(null,"Digite los apellidos del estudiante:"));
+        m.setCedula(JOptionPane.showInputDialog(null,"Digite el numero de cedula del estudiante:"));
         m.setCurso(JOptionPane.showInputDialog(null,"Digite el curso que desea matricular el estudiante:"));
         m.setHorario(JOptionPane.showInputDialog(null,"Digite el horario del curso matriculado:"));
         
@@ -45,8 +46,8 @@ public class Rutina {
     }
     public void eliminarMatricula(){
         if(!esVacia()){
-            String nombre = JOptionPane.showInputDialog(null,"Digite el nombre del estudiante que desea eliminar:");
-            if(nombre.equals(inicio.getDato().getNombre())){
+            String cedula = JOptionPane.showInputDialog(null,"Digite la cedula del estudiante que desea eliminar la matricula:");
+            if(cedula.equals(inicio.getDato().getCedula())){
                 inicio=inicio.getSiguiente();
                 JOptionPane.showMessageDialog(null,"Matricula eliminada correctamente!");
             }else{
@@ -54,7 +55,7 @@ public class Rutina {
                 NodoLES_Matricula auxiliar;
                 anterior = inicio;
                 auxiliar = inicio.getSiguiente();
-                while ((auxiliar!=null)&&(!auxiliar.getDato().getNombre().equals(nombre))){
+                while ((auxiliar!=null)&&(!auxiliar.getDato().getCedula().equals(cedula))){
                     anterior=anterior.getSiguiente();
                     auxiliar=auxiliar.getSiguiente();
                 }
@@ -74,7 +75,7 @@ public class Rutina {
             while(aux!=null){
                 s=s+aux.getDato().getNombre()+" "+aux.getDato().getApellidos()+"\n"+
                         aux.getDato().getCurso()+"\n"+
-                        aux.getDato().getHorario()+"\n";
+                        aux.getDato().getHorario()+"\n"+"- - - - - - - - - -\n";
                 aux=aux.getSiguiente();
         }
             JOptionPane.showMessageDialog(null,"Lista de Matriculas: \n"+s);
